@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [ClrPractice] (Assembly)
+     Create
+       [ClrPractice] (Assembly)
+       [dbo].[IsRegexMatch] (Function)
+
+** Supporting actions
+     Drop
+       [dbo].[HelloWorld] (Function)
+     Create
+       [dbo].[HelloWorld] (Function)

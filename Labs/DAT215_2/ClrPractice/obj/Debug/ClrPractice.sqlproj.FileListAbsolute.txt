@@ -1,0 +1,5 @@
+D:\SCT1\Topics\Managed code\Labs\UserDefinedFunction\ClrPractice\ClrPractice\bin\Debug\ClrPractice.dacpac
+D:\SCT1\Topics\Managed code\Labs\UserDefinedFunction\ClrPractice\ClrPractice\bin\Debug\ClrPractice.dll
+D:\SCT1\Topics\Managed code\Labs\UserDefinedFunction\ClrPractice\ClrPractice\bin\Debug\ClrPractice.pdb
+D:\SCT1\Topics\Managed code\Labs\UserDefinedFunction\ClrPractice\ClrPractice\obj\Debug\ClrPractice.dll
+D:\SCT1\Topics\Managed code\Labs\UserDefinedFunction\ClrPractice\ClrPractice\obj\Debug\ClrPractice.pdb
