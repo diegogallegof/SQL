@@ -8,8 +8,6 @@ CREATE NONCLUSTERED COLUMNSTORE INDEX NCI_FactProductInventory_UnitCost_UnitsOut
 GO
 
 /************************************************************************
- * Step 3																*
- *																		*
  * Create the clustered columnstore index, and re-create the dropped	*
  * indexes.																*
  * As this SQL will force SQL Server to move data into columns it can   *
