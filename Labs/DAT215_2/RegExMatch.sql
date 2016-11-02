@@ -1,4 +1,4 @@
-USE AdventureWorks2014;
+USE AdventureWorksLT;
 GO
 
 SELECT * 
