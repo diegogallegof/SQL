@@ -1,6 +1,4 @@
 /************************************************************************
- * Step 5																*
- *																		*
  * Create the clustered columnstore index, and re-create the dropped	*
  * indexes.																*
  * As this SQL will force SQL Server to move data into columns it can   *
