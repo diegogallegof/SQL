@@ -1,2 +1,2 @@
-CREATE SCHEMA Reports;
+CREATE SCHEMA Production;
 GO
