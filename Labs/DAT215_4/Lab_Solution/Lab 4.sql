@@ -1,5 +1,5 @@
 -- Create a Memory Optimized Table
-USE InternetSales
+USE AdventureWorksDW
 GO
 CREATE TABLE dbo.ShoppingCart
 (SessionID INT NOT NULL,
@@ -13,7 +13,7 @@ WITH  (MEMORY_OPTIMIZED = ON,  DURABILITY = SCHEMA_AND_DATA);
 
 -- Test the Table
 
-USE InternetSales
+USE AdventureWorksDW
 GO
 
 INSERT INTO dbo.ShoppingCart (SessionID, TimeAdded, CustomerKey, ProductKey, Quantity)
@@ -27,7 +27,7 @@ SELECT * FROM dbo.ShoppingCart;
 
 -- Create AddItemToCart Native Procedure
 
-USE InternetSales
+USE AdventureWorksDW
 GO
 CREATE PROCEDURE dbo.AddItemToCart
 @SessionID INT, @TimeAdded DATETIME, @CustomerKey INT, @ProductKey INT, @Quantity INT
@@ -41,7 +41,7 @@ GO
 
 -- Create DeleteItemFromCart Native Procedure
 
-USE InternetSales
+USE AdventureWorksDW
 GO
 CREATE PROCEDURE dbo.DeleteItemFromCart
 @SessionID INT, @ProductKey INT
@@ -56,7 +56,7 @@ GO
 
 -- Create EmptyCart Native Procedure
 
-USE InternetSales
+USE AdventureWorksDW
 GO
 CREATE PROCEDURE dbo.EmptyCart
 @SessionID INT
@@ -71,7 +71,7 @@ GO
 --Test the Procedures
 
 --Step 1 - Use the InternetSales database
-USE InternetSales
+USE AdventureWorksDW
 GO
 
 --Step 2 - Add items to cart
