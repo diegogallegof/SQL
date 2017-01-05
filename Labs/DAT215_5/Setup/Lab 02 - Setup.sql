@@ -1,5 +1,48 @@
 USE AdventureWorksLT;
 GO
+
+IF EXISTS(select * from sys.objects
+where name='up_Campaign_Replace')
+BEGIN
+DROP PROC Proseware.up_Campaign_Replace
+END
+GO
+
+IF EXISTS(select * from sys.objects
+where name='up_Campaign_Report')
+BEGIN
+DROP PROC Proseware.up_Campaign_Report
+END
+GO
+
+IF EXISTS(select * from sys.objects
+where name='up_CampaignResponse_Add')
+BEGIN
+DROP PROC Proseware.up_CampaignResponse_Add
+END
+GO
+
+IF EXISTS(select * from sys.objects
+where name='Campaign')
+BEGIN
+DROP TABLE Proseware.Campaign
+END
+GO
+
+IF EXISTS(select * from sys.objects
+where name='CampaignResponse')
+BEGIN
+DROP TABLE Proseware.CampaignResponse
+END
+GO
+
+IF EXISTS(select * from sys.schemas
+where name='Proseware')
+BEGIN
+drop schema Proseware
+END
+GO
+
 CREATE SCHEMA Proseware;
 GO
 CREATE TABLE Proseware.Campaign
@@ -10,12 +53,7 @@ CampaignStartDate date NOT NULL,
 CampaignEndDate date NOT NULL
 )
 GO
-/*ALTER TABLE Proseware.Campaign WITH CHECK ADD  CONSTRAINT FK_Campaign_SalesTerritory FOREIGN KEY (CampaignTerritoryID)
-REFERENCES Sales.SalesTerritory(TerritoryID)
-GO
-ALTER TABLE Proseware.Campaign CHECK CONSTRAINT FK_Campaign_SalesTerritory
-GO
-*/
+
 INSERT Proseware.Campaign
 (CampaignID, CampaignName, CampaignTerritoryID, CampaignStartDate, CampaignEndDate)
 SELECT TOP (10000)
@@ -27,11 +65,7 @@ DATEADD(dd, (ROW_NUMBER() OVER (ORDER BY a.name, b.name) % 3650) + 30, '2006-01-
 FROM SalesLT.Product AS a
 CROSS JOIN SalesLT.Product AS b
 GO
---CREATE INDEX ix_CampaignResponse_CampaignName ON Proseware.Campaign(CampaignName);
---DROP INDEX Proseware.Campaign.ix_CampaignResponse_CampaignName;
 
---truncate table Proseware.Campaign
---select * from Proseware.Campaign order by CampaignEndDate desc
 GO
 CREATE TABLE Proseware.CampaignResponse
 (CampaignResponseID int IDENTITY(1,1) PRIMARY KEY,
