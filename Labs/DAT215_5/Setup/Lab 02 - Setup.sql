@@ -23,16 +23,16 @@ END
 GO
 
 IF EXISTS(select * from sys.objects
-where name='Campaign')
+where name='CampaignResponse')
 BEGIN
-DROP TABLE Proseware.Campaign
+DROP TABLE Proseware.CampaignResponse
 END
 GO
 
 IF EXISTS(select * from sys.objects
-where name='CampaignResponse')
+where name='Campaign')
 BEGIN
-DROP TABLE Proseware.CampaignResponse
+DROP TABLE Proseware.Campaign
 END
 GO
 
@@ -66,7 +66,6 @@ FROM SalesLT.Product AS a
 CROSS JOIN SalesLT.Product AS b
 GO
 
-GO
 CREATE TABLE Proseware.CampaignResponse
 (CampaignResponseID int IDENTITY(1,1) PRIMARY KEY,
 CampaignID int NOT NULL,
